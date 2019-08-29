@@ -1,0 +1,20 @@
+#!/bin/sh
+
+java -version
+
+echo "Unzipping sdk tools"
+unzip sdktool.zip > /dev/null 2>&1
+
+export PATH=`pwd`/tools/bin:$PATH
+
+echo "Installing sdk components"
+echo y | sdkmanager "tools" >/dev/null 2>&1
+echo y | sdkmanager "platform-tools" >/dev/null 2>&1
+echo y | sdkmanager "platforms;android-15" >/dev/null 2>&1
+echo y | sdkmanager "ndk-bundle" >/dev/null 2>&1
+
+export ANDROID_HOME=`pwd`
+export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle
+
+echo "sdk installed in $ANDROID_HOME"
+echo "ndk installed in $ANDROID_NDK_HOME"

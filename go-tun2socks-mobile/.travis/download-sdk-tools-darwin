@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Downloading sdk tools"
+wget -q -O sdktool.zip "https://dl.google.com/android/repository/sdk-tools-darwin-4333796.zip"
