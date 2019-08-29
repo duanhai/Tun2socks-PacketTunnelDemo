@@ -24,7 +24,45 @@ Thx:
 @ riobard/go-shadowsocks2
 @ SimpleTunnel 
 
-
 TBD:
   1.没有仔细查api,需要做route traffic可能是需要设置代理添加规则（ss）
   2.修改-mobile.go 暴露出V🤮ray可以使用的方法，有空再来弄下
+
+
+
+```swift
+package tun2socks
+
+import (
+	"time"
+
+	"github.com/eycorsican/go-tun2socks/core"
+	// "github.com/eycorsican/go-tun2socks/proxy/socks"
+	"github.com/eycorsican/go-tun2socks/proxy/shadowsocks"
+
+)
+
+type PacketFlow interface {
+	WritePacket(packet []byte)
+}
+
+var lwipStack core.LWIPStack
+
+func InputPacket(data []byte) {
+	lwipStack.Write(data)
+}
+
+func StartShadowsocks(packetFlow PacketFlow, proxyHost string, proxyPort int, proxyCipher, proxyPassword string) {
+	if packetFlow != nil {
+		lwipStack = core.NewLWIPStack()
+		core.RegisterTCPConnHandler(shadowsocks.NewTCPHandler(core.ParseTCPAddr(proxyHost, uint16(proxyPort)).String(), proxyCipher, proxyPassword,nil))
+		core.RegisterUDPConnHandler(shadowsocks.NewUDPHandler(core.ParseUDPAddr(proxyHost, uint16(proxyPort)).String(), proxyCipher, proxyPassword, 30*time.Second,nil,nil))
+		core.RegisterOutputFn(func(data []byte) (int, error) {
+			packetFlow.WritePacket(data)
+			return len(data), nil
+		})
+	}
+}
+
+```
+
