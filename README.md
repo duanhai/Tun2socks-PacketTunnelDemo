@@ -3,8 +3,11 @@
 https://github.com/riobard/go-shadowsocks2
 
 1st:
+
 go get -u -v github.com/riobard/go-shadowsocks2
+
 2nd:
+
 cd /go/bin 
 ./go-shadowsocks2 -s ss://AES-256-CFB:abcd1234@:8488 -verbose
 
