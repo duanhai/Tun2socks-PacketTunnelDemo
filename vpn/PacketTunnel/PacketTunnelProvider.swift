@@ -10,16 +10,25 @@ import NetworkExtension
 import Tun2socks
 class PacketTunnelProvider: NEPacketTunnelProvider {
 
-    let serverIp = ""
+    let serverIp = "xxx"
     
     func tunToUDP() {
         
         weak var weakSelf = self
         self.packetFlow.readPackets { (packets: [Data], protocols: [NSNumber]) in
             for packet in packets {
-                Tun2socksInputPacket(packet)
+//                Tun2socksInputPacket(packet)
 //                NSLog("aaabbbccc")
+//                if packet == nil {
+//                    Tun2socksInputPacket(packet)
+//
+//                }
+                if let thePacket: Data = packet {
+                    Tun2socksInputPacket(thePacket)
+                }
+                
             }
+            
             // Recursive to keep reading
             weakSelf!.tunToUDP()
         }
@@ -51,8 +60,28 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
 
         }
+        NSLog("before")
+
+//        Tun2socksStartShadowsocks(self, serverIp, 8488, "AES-256-CFB", "abcd1234")
         
-        Tun2socksStartShadowsocks(self, serverIp, 8488, "AES-256-CFB", "abcd1234")
+        let fileName = "v2ray"
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+//                NSLog(data.description)
+                NSLog("description :\(data.description)")
+                Tun2socksStartV2Ray(self, data)
+
+            } catch let err {
+                print("error:\(err)")
+            }
+
+        }
+
+        NSLog("after")
+        
+//        Tun2socksStartV2ray(self, <#T##configBytes: Data!##Data!#>)
+        
 //        self.tunToUDP()
         NSLog("========")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

@@ -6,7 +6,7 @@
 #ifndef __Tun2socks_H__
 #define __Tun2socks_H__
 
-#import <Foundation/Foundation.h>;
+@import Foundation;
 #include "Universe.objc.h"
 
 
@@ -20,6 +20,8 @@
 FOUNDATION_EXPORT void Tun2socksInputPacket(NSData* data);
 
 FOUNDATION_EXPORT void Tun2socksStartShadowsocks(id<Tun2socksPacketFlow> packetFlow, NSString* proxyHost, long proxyPort, NSString* proxyCipher, NSString* proxyPassword);
+
+FOUNDATION_EXPORT void Tun2socksStartV2Ray(id<Tun2socksPacketFlow> packetFlow, NSData* configBytes);
 
 @class Tun2socksPacketFlow;
 

@@ -1,0 +1,27 @@
+{
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "xxx",
+                        "port": 37844,
+                        "users": [
+                            {
+                                "id": "c1722917-9415-4466-8d65-8fb047de7ba4",
+                                "alterId": 233,
+                                "security": "auto"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "mux": {
+                "enabled": true
+            }
+        }
+    ]
+    
+    
+}

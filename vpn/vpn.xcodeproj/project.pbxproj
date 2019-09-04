@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		757FE042231E923A0056E97C /* v2ray.json in Resources */ = {isa = PBXBuildFile; fileRef = 757FE041231E923A0056E97C /* v2ray.json */; };
+		75B67B17231FA06C0023E200 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B67B16231FA06C0023E200 /* NetworkExtension.framework */; };
+		75B67B18231FA0730023E200 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B67B16231FA06C0023E200 /* NetworkExtension.framework */; };
+		75E43FE0231E3F6900E146FD /* Tun2socks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E43FDF231E3F6900E146FD /* Tun2socks.framework */; };
 		75EEE14623179C0700E718A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEE14523179C0700E718A6 /* AppDelegate.swift */; };
 		75EEE14823179C0700E718A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEE14723179C0700E718A6 /* ViewController.swift */; };
 		75EEE14B23179C0700E718A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75EEE14923179C0700E718A6 /* Main.storyboard */; };
@@ -15,9 +19,6 @@
 		75EEE15B23179DA300E718A6 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEE15A23179DA300E718A6 /* VpnManager.swift */; };
 		75EEE16323179F2E00E718A6 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEE16223179F2E00E718A6 /* PacketTunnelProvider.swift */; };
 		75EEE16823179F2E00E718A6 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 75EEE16023179F2D00E718A6 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		75EEE1702317A1BE00E718A6 /* Tun2socks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EEE16F2317A1BE00E718A6 /* Tun2socks.framework */; };
-		75EEE1742317B00300E718A6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EEE1732317B00300E718A6 /* NetworkExtension.framework */; };
-		75EEE1752317B00C00E718A6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EEE1732317B00300E718A6 /* NetworkExtension.framework */; };
 		75EEE1762317B0E700E718A6 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEE15A23179DA300E718A6 /* VpnManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		757FE041231E923A0056E97C /* v2ray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v2ray.json; sourceTree = "<group>"; };
+		75B67B16231FA06C0023E200 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		75E43FDF231E3F6900E146FD /* Tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tun2socks.framework; sourceTree = "<group>"; };
 		75EEE14223179C0700E718A6 /* vpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75EEE14523179C0700E718A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75EEE14723179C0700E718A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,8 +63,6 @@
 		75EEE16423179F2E00E718A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75EEE16523179F2E00E718A6 /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
 		75EEE16E2317A13D00E718A6 /* vpn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vpn.entitlements; sourceTree = "<group>"; };
-		75EEE16F2317A1BE00E718A6 /* Tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tun2socks.framework; sourceTree = "<group>"; };
-		75EEE1732317B00300E718A6 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EEE1742317B00300E718A6 /* NetworkExtension.framework in Frameworks */,
+				75B67B17231FA06C0023E200 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EEE1702317A1BE00E718A6 /* Tun2socks.framework in Frameworks */,
-				75EEE1752317B00C00E718A6 /* NetworkExtension.framework in Frameworks */,
+				75E43FE0231E3F6900E146FD /* Tun2socks.framework in Frameworks */,
+				75B67B18231FA0730023E200 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +123,7 @@
 		75EEE15723179C2800E718A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				75EEE1732317B00300E718A6 /* NetworkExtension.framework */,
+				75B67B16231FA06C0023E200 /* NetworkExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,8 +131,9 @@
 		75EEE16123179F2E00E718A6 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
-				75EEE16F2317A1BE00E718A6 /* Tun2socks.framework */,
+				75E43FDF231E3F6900E146FD /* Tun2socks.framework */,
 				75EEE16223179F2E00E718A6 /* PacketTunnelProvider.swift */,
+				757FE041231E923A0056E97C /* v2ray.json */,
 				75EEE16423179F2E00E718A6 /* Info.plist */,
 				75EEE16523179F2E00E718A6 /* PacketTunnel.entitlements */,
 			);
@@ -247,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757FE042231E923A0056E97C /* v2ray.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
