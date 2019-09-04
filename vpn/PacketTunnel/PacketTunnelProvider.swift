@@ -17,15 +17,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         weak var weakSelf = self
         self.packetFlow.readPackets { (packets: [Data], protocols: [NSNumber]) in
             for packet in packets {
-//                Tun2socksInputPacket(packet)
-//                NSLog("aaabbbccc")
-//                if packet == nil {
-//                    Tun2socksInputPacket(packet)
-//
-//                }
-                if let thePacket: Data = packet {
-                    Tun2socksInputPacket(thePacket)
-                }
+                Tun2socksInputPacket(packet)
                 
             }
             
